@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Inventa GestyPro — Gestion multi-magasins</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🛍️</text></svg>">
+</head>
+<body>
+  <div id="racine"></div>
+  <div class="notifications" id="notifications"></div>
+
+  <!-- Le noyau (ui + api + app) doit être chargé avant les vues :
+       les fichiers de vues appellent App.enregistrerVue(...) à l'exécution. -->
+  <script src="js/i18n.js"></script>                  <!-- langues (FR/EN/ZH) + thème clair/sombre -->
+  <script src="js/ui.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/tempsreel.js"></script>            <!-- actualisation automatique des écrans -->
+  <script src="js/views/inscription.js"></script>  <!-- page publique : créer son entreprise -->
+  <script src="js/views/verification.js"></script> <!-- vérification de l'email (bloquant) -->
+  <script src="js/views/aide.js"></script>         <!-- espace « Aide » (WhatsApp 654 32 42 82) -->
+  <script src="js/views/plateforme.js"></script>   <!-- console du propriétaire : toutes les entreprises -->
+  <script src="js/views/plateforme-ventes.js"></script>     <!-- ventes d'abonnements : tous les paiements reçus -->
+  <script src="js/views/plateforme-classement.js"></script> <!-- classement des entreprises les plus actives -->
+  <script src="js/views/plateforme-tarifs.js"></script>     <!-- formules, réductions, augmentations, PSP -->
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/caisse.js"></script>
+  <script src="js/views/ventes.js"></script>
+  <script src="js/views/produits.js"></script>
+  <script src="js/views/stocks.js"></script>
+  <script src="js/views/transferts.js"></script>
+  <script src="js/views/inventaires.js"></script>  <!-- inventaires physiques : comptage, valorisation, écarts -->
+  <script src="js/views/messages.js"></script>      <!-- messagerie interne (propriétaire ↔ admins ↔ comptes) -->
+  <script src="js/views/achats.js"></script>
+  <script src="js/views/clients.js"></script>
+  <script src="js/views/salaires.js"></script>     <!-- paie du personnel -->
+  <script src="js/views/recrutement.js"></script>  <!-- candidatures + dossiers + documents PDF -->     <!-- clients + fournisseurs + employés -->
+  <script src="js/views/rapports.js"></script>
+  <script src="js/views/abonnement.js"></script>   <!-- abonnement + paiement Mobile Money -->
+  <script src="js/views/administration.js"></script> <!-- magasins + utilisateurs + paramètres -->
+</body>
+</html>

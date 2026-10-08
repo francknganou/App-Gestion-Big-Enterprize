@@ -1,0 +1,604 @@
+/* ==========================================================================
+   Inventa GestyPro — Feuille de style
+   ========================================================================== */
+:root{
+  --bg:#eef1f6; --panel:#ffffff; --panel-2:#f8fafc;
+  --ink:#0f172a; --ink-2:#334155; --muted:#64748b; --line:#e2e8f0;
+  --primary:#0b7a75; --primary-dark:#095e5a; --primary-soft:#e6f4f3;
+  --accent:#f59e0b; --accent-soft:#fef3c7;
+  --ok:#15803d; --ok-soft:#dcfce7;
+  --warn:#b45309; --warn-soft:#fef3c7;
+  --bad:#b91c1c; --bad-soft:#fee2e2;
+  --info:#1d4ed8; --info-soft:#dbeafe;
+  --sidebar:#0f172a; --sidebar-2:#16213a;
+  --radius:12px; --radius-sm:8px;
+  --ombre:0 1px 2px rgba(16,24,40,.05), 0 4px 14px rgba(16,24,40,.06);
+  --ombre-fort:0 10px 34px rgba(16,24,40,.18);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;height:100%}
+body{
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  background:var(--bg); color:var(--ink); font-size:14.5px; line-height:1.5;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{margin:0;font-weight:650;letter-spacing:-.01em}
+a{color:var(--primary);text-decoration:none}
+button,input,select,textarea{font-family:inherit;font-size:14px}
+::-webkit-scrollbar{width:10px;height:10px}
+::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:8px;border:2px solid transparent;background-clip:content-box}
+
+/* ---------- Connexion ---------- */
+.ecran-connexion{
+  min-height:100vh;display:grid;grid-template-columns:1.05fr .95fr;background:var(--sidebar);
+}
+.connexion-gauche{
+  background:
+    radial-gradient(1100px 500px at 10% 0%, rgba(11,122,117,.55), transparent 60%),
+    radial-gradient(700px 500px at 90% 100%, rgba(245,158,11,.22), transparent 60%),
+    linear-gradient(150deg,#0f172a,#16213a 60%,#0b3b45);
+  color:#e2e8f0; padding:56px 60px; display:flex; flex-direction:column; justify-content:space-between;
+}
+.marque{display:flex;align-items:center;gap:14px}
+.marque .logo{
+  width:46px;height:46px;border-radius:12px;display:grid;place-items:center;font-size:22px;
+  background:linear-gradient(140deg,#0b7a75,#0ea5a0); box-shadow:0 8px 24px rgba(11,122,117,.45);
+}
+.marque b{font-size:19px;letter-spacing:.2px;color:#fff}
+.marque small{display:block;color:#94a3b8;font-size:12.5px;font-weight:400}
+.connexion-gauche h1{font-size:30px;line-height:1.25;color:#fff;margin:26px 0 12px;max-width:520px}
+.connexion-gauche p.accroche{color:#a9b6c9;max-width:520px;font-size:15px}
+.fonctions{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:30px;max-width:560px}
+.fonction{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.09);border-radius:10px;padding:12px 14px;font-size:13.5px;color:#cbd5e1}
+.fonction span{display:block;font-size:17px;margin-bottom:4px}
+.connexion-droite{background:#fff;display:grid;place-items:center;padding:40px}
+.boite-connexion{width:100%;max-width:390px}
+.boite-connexion h2{font-size:22px;margin-bottom:6px}
+.boite-connexion .sous{color:var(--muted);margin-bottom:24px;font-size:14px}
+.champ{margin-bottom:14px}
+.champ label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:var(--ink-2)}
+.champ input,.champ select,.champ textarea{
+  width:100%;padding:10px 12px;border:1px solid var(--line);border-radius:var(--radius-sm);
+  background:#fff;color:var(--ink);outline:none;transition:.15s;font-size:14px;
+}
+.champ input:focus,.champ select:focus,.champ textarea:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,122,117,.14)}
+.champ .aide{font-size:12px;color:var(--muted);margin-top:4px}
+.comptes-demo{margin-top:22px;border-top:1px dashed var(--line);padding-top:16px}
+.comptes-demo p{font-size:12.5px;color:var(--muted);margin:0 0 8px}
+.compte{display:flex;justify-content:space-between;gap:8px;align-items:center;width:100%;
+  border:1px solid var(--line);background:var(--panel-2);border-radius:8px;padding:8px 10px;margin-bottom:6px;cursor:pointer;transition:.15s}
+.compte:hover{border-color:var(--primary);background:var(--primary-soft)}
+.compte b{font-size:13px}
+.compte code{font-size:11.5px;color:var(--muted)}
+
+/* ---------- Coquille application ---------- */
+.app{display:grid;grid-template-columns:246px 1fr;min-height:100vh}
+.barre-laterale{
+  background:var(--sidebar);color:#cbd5e1;display:flex;flex-direction:column;position:sticky;top:0;height:100vh;overflow-y:auto;
+}
+.bs-haut{padding:18px 18px 12px;border-bottom:1px solid rgba(255,255,255,.07)}
+.bs-marque{display:flex;align-items:center;gap:11px}
+.bs-marque .logo{width:36px;height:36px;border-radius:10px;display:grid;place-items:center;
+  background:linear-gradient(140deg,#0b7a75,#0ea5a0);font-size:18px}
+.bs-marque b{color:#fff;font-size:14.5px;display:block}
+.bs-marque small{color:#8fa0b8;font-size:11.5px}
+.bs-entreprise{padding:12px 18px;border-bottom:1px solid rgba(255,255,255,.07);font-size:12px;color:#8fa0b8}
+.bs-entreprise b{color:#e2e8f0;font-size:13px;display:block}
+nav{padding:10px 8px;flex:1}
+nav .groupe{font-size:10.5px;text-transform:uppercase;letter-spacing:.09em;color:#64748b;margin:14px 10px 6px;font-weight:700}
+nav a{
+  display:flex;align-items:center;gap:10px;padding:9px 11px;border-radius:9px;color:#cbd5e1;
+  font-size:13.7px;font-weight:500;margin-bottom:2px;transition:.14s;border:1px solid transparent;
+}
+nav a:hover{background:var(--sidebar-2);color:#fff}
+nav a.actif{background:linear-gradient(90deg,rgba(11,122,117,.95),rgba(14,165,160,.55));color:#fff;box-shadow:0 4px 14px rgba(11,122,117,.35)}
+nav a .ic{font-size:16px;width:20px;text-align:center}
+nav a .pastille{margin-left:auto;background:var(--bad);color:#fff;font-size:10.5px;border-radius:20px;padding:1px 7px;font-weight:700}
+.bs-bas{padding:12px;border-top:1px solid rgba(255,255,255,.07);display:flex;align-items:center;gap:10px}
+.avatar{width:34px;height:34px;border-radius:50%;background:linear-gradient(140deg,#0b7a75,#0ea5a0);color:#fff;
+  display:grid;place-items:center;font-weight:700;font-size:13px;flex:none}
+.bs-bas .qui{flex:1;min-width:0}
+.bs-bas .qui b{color:#fff;font-size:13px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bs-bas .qui small{color:#8fa0b8;font-size:11px}
+
+.zone-principale{display:flex;flex-direction:column;min-width:0}
+.barre-haut{
+  background:rgba(255,255,255,.85);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);
+  padding:12px 24px;display:flex;align-items:center;gap:16px;position:sticky;top:0;z-index:30;
+}
+.barre-haut h1{font-size:18px}
+.barre-haut .chemin{font-size:12px;color:var(--muted)}
+.barre-haut .outils{margin-left:auto;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.selecteur-magasin{display:flex;align-items:center;gap:8px;background:var(--panel-2);border:1px solid var(--line);
+  border-radius:10px;padding:5px 10px;font-size:13px}
+.selecteur-magasin select{border:none;background:transparent;font-weight:600;color:var(--ink);outline:none;max-width:220px}
+.contenu{padding:22px 24px 60px;flex:1;min-width:0}
+.menu-mobile{display:none}
+
+/* ---------- Cartes / grilles ---------- */
+.carte{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--ombre);margin-bottom:18px}
+.carte-entete{padding:14px 18px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.carte-entete h3{font-size:15px}
+.carte-entete .sous{font-size:12.5px;color:var(--muted)}
+.carte-entete .droite{margin-left:auto;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.carte-corps{padding:18px}
+.carte-corps.serre{padding:0}
+.grille{display:grid;gap:16px}
+.g-kpi{grid-template-columns:repeat(auto-fit,minmax(210px,1fr))}
+.g-2{grid-template-columns:repeat(auto-fit,minmax(340px,1fr))}
+.g-3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g-caisse{grid-template-columns:1fr 370px;gap:18px;align-items:start}
+
+.kpi{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:15px 16px;box-shadow:var(--ombre);position:relative;overflow:hidden}
+.kpi:before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--primary)}
+.kpi.ambre:before{background:var(--accent)} .kpi.vert:before{background:var(--ok)}
+.kpi.rouge:before{background:var(--bad)} .kpi.bleu:before{background:var(--info)}
+.kpi .libelle{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;font-weight:600}
+.kpi .valeur{font-size:23px;font-weight:700;margin-top:5px;letter-spacing:-.02em}
+.kpi .valeur small{font-size:13px;color:var(--muted);font-weight:600}
+.kpi .pied{font-size:12.5px;color:var(--muted);margin-top:5px;display:flex;align-items:center;gap:6px}
+.hausse{color:var(--ok);font-weight:700}.baisse{color:var(--bad);font-weight:700}
+
+/* ---------- Tableaux ---------- */
+.tableau-enveloppe{overflow:auto;border-radius:0 0 var(--radius) var(--radius)}
+table.tableau{width:100%;border-collapse:collapse;font-size:13.6px}
+table.tableau th{
+  text-align:left;padding:11px 14px;background:var(--panel-2);color:var(--muted);font-weight:700;
+  font-size:11.5px;text-transform:uppercase;letter-spacing:.05em;border-bottom:1px solid var(--line);white-space:nowrap;position:sticky;top:0;z-index:2
+}
+table.tableau td{padding:10px 14px;border-bottom:1px solid var(--line);vertical-align:middle}
+table.tableau tbody tr:hover{background:#f8fbfb}
+table.tableau tbody tr:last-child td{border-bottom:none}
+table.tableau td.num,table.tableau th.num{text-align:right;font-variant-numeric:tabular-nums}
+table.tableau td.fort{font-weight:700}
+table.tableau .actions{display:flex;gap:6px;justify-content:flex-end}
+.ligne-cliquable{cursor:pointer}
+.vide{padding:38px;text-align:center;color:var(--muted)}
+.vide span{font-size:30px;display:block;margin-bottom:8px;opacity:.6}
+
+/* ---------- Boutons / badges ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:7px;border:1px solid var(--line);background:#fff;color:var(--ink);
+  padding:8px 13px;border-radius:9px;font-weight:600;font-size:13.4px;cursor:pointer;transition:.14s;white-space:nowrap
+}
+.btn:hover{background:var(--panel-2);border-color:#cbd5e1}
+.btn.primaire{background:var(--primary);border-color:var(--primary);color:#fff}
+.btn.primaire:hover{background:var(--primary-dark)}
+.btn.ambre{background:var(--accent);border-color:var(--accent);color:#3b2400}
+.btn.danger{background:#fff;border-color:#f0c3c3;color:var(--bad)}
+.btn.danger:hover{background:var(--bad-soft)}
+.btn.petit{padding:5px 9px;font-size:12.4px;border-radius:7px}
+.btn:disabled{opacity:.55;cursor:not-allowed}
+.btn-bloc{width:100%;justify-content:center}
+.btn-lien{background:none;border:none;color:var(--primary);cursor:pointer;font-weight:600;padding:0}
+
+.badge{display:inline-flex;align-items:center;gap:5px;padding:3px 9px;border-radius:20px;font-size:11.8px;font-weight:700;white-space:nowrap}
+.badge.ok{background:var(--ok-soft);color:var(--ok)}
+.badge.attente{background:var(--warn-soft);color:var(--warn)}
+.badge.ko{background:var(--bad-soft);color:var(--bad)}
+.badge.info{background:var(--info-soft);color:var(--info)}
+.badge.neutre{background:#eef2f6;color:var(--muted)}
+.puce{display:inline-block;padding:2px 8px;border-radius:6px;background:var(--primary-soft);color:var(--primary-dark);font-size:11.5px;font-weight:700}
+
+/* ---------- Filtres ---------- */
+.filtres{display:flex;gap:10px;flex-wrap:wrap;align-items:flex-end}
+.filtres .champ{margin:0;min-width:130px}
+.filtres .champ label{font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.filtres input,.filtres select{padding:8px 10px}
+.recherche{position:relative;flex:1;min-width:220px}
+.recherche input{width:100%;padding:9px 12px 9px 34px;border:1px solid var(--line);border-radius:9px;outline:none}
+.recherche input:focus{border-color:var(--primary);box-shadow:0 0 0 3px rgba(11,122,117,.14)}
+.recherche:before{content:"🔎";position:absolute;left:11px;top:8px;font-size:14px;opacity:.6}
+
+/* ---------- Caisse (POS) ---------- */
+.pos-grille{display:grid;grid-template-columns:repeat(auto-fill,minmax(184px,1fr));gap:12px;
+  max-height:calc(100vh - 300px);overflow:auto;padding:2px}
+.pos-produit{
+  border:1px solid var(--line);border-radius:11px;padding:11px;background:#fff;cursor:pointer;transition:.14s;
+  display:flex;flex-direction:column;gap:4px;min-height:96px;text-align:left
+}
+.pos-produit:hover{border-color:var(--primary);box-shadow:0 6px 18px rgba(11,122,117,.15);transform:translateY(-1px)}
+.pos-produit .cat{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em;font-weight:700}
+.pos-produit .nom{font-weight:650;font-size:13.4px;line-height:1.3}
+.pos-produit .bas{margin-top:auto;display:flex;justify-content:space-between;align-items:center}
+.pos-produit .prix{font-weight:700;color:var(--primary-dark)}
+.pos-produit .dispo{font-size:11.4px;color:var(--muted)}
+.pos-produit.rupture{opacity:.55;cursor:not-allowed}
+.panier{position:sticky;top:78px}
+.panier-lignes{max-height:38vh;overflow:auto;padding:4px 0}
+.panier-ligne{display:grid;grid-template-columns:1fr auto;gap:6px;padding:9px 0;border-bottom:1px dashed var(--line)}
+.panier-ligne .nom{font-weight:600;font-size:13.2px}
+.panier-ligne .pu{font-size:11.8px;color:var(--muted)}
+.qte-ctrl{display:flex;align-items:center;gap:5px;margin-top:5px}
+.qte-ctrl button{width:24px;height:24px;border-radius:6px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:700;line-height:1}
+.qte-ctrl input{width:56px;padding:3px 6px;text-align:center;border:1px solid var(--line);border-radius:6px}
+.panier-total{display:flex;justify-content:space-between;padding:7px 0;font-size:14px}
+.panier-total.grand{font-size:20px;font-weight:750;border-top:2px solid var(--line);margin-top:6px;padding-top:11px;color:var(--primary-dark)}
+.a-payer{background:var(--primary-soft);border:1px solid #bfe3e0;border-radius:10px;padding:10px 12px;margin-top:10px}
+.ligne-paiement{display:grid;grid-template-columns:repeat(2,1fr);gap:6px}
+.mode-paiement{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;margin:8px 0}
+.mode-paiement button{padding:8px;border-radius:9px;border:1px solid var(--line);background:#fff;cursor:pointer;font-weight:600;font-size:12.6px}
+.mode-paiement button.actif{border-color:var(--primary);background:var(--primary-soft);color:var(--primary-dark)}
+
+/* ---------- Onglets ---------- */
+.onglets{display:flex;gap:4px;border-bottom:1px solid var(--line);margin-bottom:16px;flex-wrap:wrap}
+.onglets button{background:none;border:none;padding:10px 14px;cursor:pointer;font-weight:600;color:var(--muted);
+  border-bottom:2px solid transparent;font-size:13.6px}
+.onglets button.actif{color:var(--primary-dark);border-bottom-color:var(--primary)}
+
+/* ---------- Graphiques ---------- */
+.graphique{width:100%;height:auto;display:block}
+.jauge{height:9px;border-radius:20px;background:#eef2f6;overflow:hidden;margin-top:5px}
+.jauge span{display:block;height:100%;background:linear-gradient(90deg,var(--primary),#0ea5a0);border-radius:20px}
+.jauge.ambre span{background:linear-gradient(90deg,#f59e0b,#fbbf24)}
+.jauge.rouge span{background:linear-gradient(90deg,#dc2626,#f87171)}
+.liste-barres{display:flex;flex-direction:column;gap:11px}
+.liste-barres .lb-tete{display:flex;justify-content:space-between;font-size:13.2px;gap:10px}
+.liste-barres .lb-tete b{font-variant-numeric:tabular-nums}
+
+/* ---------- Modales / notifications ---------- */
+.voile{position:fixed;inset:0;background:rgba(15,23,42,.55);backdrop-filter:blur(3px);display:grid;place-items:center;
+  z-index:100;padding:18px;animation:apparait .16s ease-out}
+@keyframes apparait{from{opacity:0}to{opacity:1}}
+.modale{background:#fff;border-radius:14px;box-shadow:var(--ombre-fort);width:100%;max-width:620px;max-height:92vh;
+  display:flex;flex-direction:column;animation:monte .18s ease-out}
+@keyframes monte{from{transform:translateY(12px);opacity:.6}to{transform:none;opacity:1}}
+.modale.large{max-width:900px}
+.modale.etroite{max-width:430px}
+.modale-entete{padding:15px 20px;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}
+.modale-entete h3{font-size:16px;flex:1}
+.modale-corps{padding:20px;overflow:auto}
+.modale-pied{padding:14px 20px;border-top:1px solid var(--line);display:flex;gap:10px;justify-content:flex-end;background:var(--panel-2);border-radius:0 0 14px 14px}
+.fermer{background:none;border:none;font-size:20px;cursor:pointer;color:var(--muted);line-height:1}
+.grille-form{display:grid;grid-template-columns:1fr 1fr;gap:0 16px}
+.grille-form .plein{grid-column:1/-1}
+.notifications{position:fixed;top:16px;right:16px;z-index:200;display:flex;flex-direction:column;gap:9px;max-width:380px}
+.notif{background:#fff;border-left:4px solid var(--primary);border-radius:10px;box-shadow:var(--ombre-fort);
+  padding:12px 15px;font-size:13.6px;animation:glisse .2s ease-out}
+.notif.ok{border-color:var(--ok)} .notif.erreur{border-color:var(--bad)} .notif.attente{border-color:var(--accent)}
+@keyframes glisse{from{transform:translateX(24px);opacity:0}to{transform:none;opacity:1}}
+
+/* ---------- Ticket ---------- */
+.ticket{font-family:"Courier New",monospace;font-size:12.6px;background:#fff;color:#111;width:302px;margin:0 auto;padding:14px}
+.ticket h3{text-align:center;font-size:15px;margin-bottom:2px;font-family:inherit}
+.ticket .ligne{display:flex;justify-content:space-between;gap:8px}
+.ticket hr{border:none;border-top:1px dashed #999;margin:8px 0}
+.ticket table{width:100%;border-collapse:collapse;font-size:12px}
+.ticket td{padding:2px 0;vertical-align:top}
+
+.defilement{overflow:auto;max-height:440px}
+.texte-muted{color:var(--muted)}
+.petit{font-size:12.4px}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.6px}
+.centre{text-align:center}
+.espace{height:12px}
+.droite{text-align:right}
+a.gras{font-weight:700}
+.legende{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin-top:8px}
+.legende i{display:inline-block;width:9px;height:9px;border-radius:3px;margin-right:5px}
+.barre-outils{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+@media print{
+  body{background:#fff}
+  .barre-laterale,.barre-haut,.notifications,.voile .modale-pied,.no-print{display:none !important}
+  .modale{box-shadow:none;max-height:none}
+}
+@media (max-width:1180px){ .g-caisse{grid-template-columns:1fr} .panier{position:static} }
+@media (max-width:900px){
+  .app{grid-template-columns:1fr}
+  .barre-laterale{position:fixed;z-index:60;width:250px;transform:translateX(-100%);transition:.2s}
+  .barre-laterale.ouvert{transform:none;box-shadow:var(--ombre-fort)}
+  .menu-mobile{display:inline-flex}
+  .ecran-connexion{grid-template-columns:1fr}
+  .connexion-gauche{display:none}
+  .contenu{padding:16px}
+  .grille-form{grid-template-columns:1fr}
+}
+
+/* ---------- Abonnement (bandeau, badge, choix de formule et de service) ---------- */
+.bandeau-abonnement{margin-top:8px}
+.bandeau{border-radius:var(--radius);padding:11px 15px;border:1px solid var(--line);font-size:13.5px;background:var(--panel-2)}
+.bandeau.ko{background:var(--bad-soft);border-color:#fecaca;color:#7f1d1d}
+.bandeau.attente{background:var(--warn-soft);border-color:#fde68a;color:#78350f}
+.bandeau.ok{background:var(--ok-soft);border-color:#bbf7d0;color:#14532d}
+#bandeau-abonnement{padding:0 22px}
+.badge-abonnement{display:inline-flex;align-items:center;gap:5px;padding:4px 11px;border-radius:20px;
+  font-size:12px;font-weight:700;white-space:nowrap;border:1px solid transparent}
+.badge-abonnement.ok{background:var(--ok-soft);color:var(--ok);border-color:#bbf7d0}
+.badge-abonnement.attente{background:var(--warn-soft);color:var(--warn);border-color:#fde68a}
+.badge-abonnement.ko{background:var(--bad-soft);color:var(--bad);border-color:#fecaca}
+.choix-formules,.choix-services{display:grid;gap:9px}
+.choix-carte{display:flex;align-items:center;gap:10px;border:1.5px solid var(--line);border-radius:10px;
+  padding:11px 13px;cursor:pointer;background:var(--panel);transition:.15s}
+.choix-carte:hover{border-color:#c7d2dd}
+.choix-carte.actif{border-color:var(--primary);background:var(--primary-soft)}
+.choix-carte input{width:auto;margin:0}
+.choix-carte > div:nth-child(2){flex:1;min-width:0}
+.choix-carte .prix{font-weight:700;text-align:right;white-space:nowrap;font-size:14px}
+.bloc-paiement{border:1px dashed var(--line);border-radius:10px;padding:11px 13px;background:var(--panel-2)}
+.bloc-paiement .panier-total{padding:3px 0}
+.etapes-paiement{margin-top:12px;display:grid;gap:8px}
+.etapes-paiement > div{display:flex;gap:9px;align-items:flex-start;font-size:13.2px;color:var(--ink-2)}
+.etapes-paiement span{flex:none;width:20px;height:20px;border-radius:50%;background:var(--primary);color:#fff;
+  display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:700}
+.comptes-liste{display:grid;gap:10px}
+
+/* ---------- Habilitations par compte ---------- */
+.hab-groupe{border:1px solid var(--line);border-radius:10px;padding:9px 11px;background:var(--panel)}
+.hab-groupe > b{display:block;margin-bottom:4px}
+.hab-ligne{display:flex;gap:7px;align-items:flex-start;padding:3px 5px;border-radius:6px;font-size:12.6px;line-height:1.35}
+.hab-ligne input{width:auto;margin:2px 0 0;flex:none}
+.hab-ligne > span{display:block}
+.hab-ligne .mono{font-size:10.5px;display:block}
+.hab-ligne .badge{font-size:10px;padding:1px 6px;margin-left:4px}
+.hab-ligne.accordee{background:var(--ok-soft)}
+.hab-ligne.fige{opacity:.75}
+
+/* ---------- Page publique : création de l'entreprise (inscription) ---------- */
+.ecran-connexion.inscription .connexion-gauche{padding:44px 48px}
+.ecran-connexion.inscription .connexion-droite{padding:34px 40px;align-items:flex-start;overflow-y:auto;max-height:100vh}
+.ecran-connexion.inscription .boite-connexion{max-width:620px}
+.ecran-connexion.inscription h2{font-size:23px;margin-bottom:4px}
+.zone-logo{display:flex;gap:14px;align-items:center;border:1px dashed var(--line);border-radius:10px;
+  padding:12px;background:var(--panel-2)}
+.logo-apercu{width:76px;height:76px;flex:none;border-radius:11px;background:var(--primary-soft);
+  border:1px solid var(--line);display:grid;place-items:center;font-size:32px;overflow:hidden}
+.logo-apercu img{width:100%;height:100%;object-fit:contain}
+.zone-logo input[type=file]{border:none;background:transparent;padding:0;font-size:12.5px}
+.bloc-inscription{margin-top:20px;border-top:1px dashed var(--line);padding-top:16px;text-align:center}
+.bloc-inscription .aide{margin-bottom:9px;color:var(--muted);font-size:12.5px}
+
+/* Logo affiché dans la coquille et l'écran d'accueil */
+.marque .logo img,.bs-marque .logo img{width:100%;height:100%;object-fit:contain;border-radius:inherit}
+.bs-marque .logo{overflow:hidden;background:var(--panel)}
+
+/* ---------- Console du propriétaire : cartes d'entreprises ---------- */
+.entreprise-carte .carte-entete h3{font-size:15px}
+.entreprise-carte .panier-total{padding:4px 0;border-bottom:1px dashed var(--line)}
+.entreprise-carte .panier-total:last-of-type{border-bottom:none}
+
+@media (max-width:900px){
+  .ecran-connexion.inscription .connexion-droite{padding:26px 20px}
+  .zone-logo{flex-direction:row}
+}
+
+/* Colonnes de cartes (4 par ligne sur grand écran) */
+.g-4{grid-template-columns:repeat(auto-fit,minmax(190px,1fr))}
+
+/* ---------- Page d'inscription : aperçu du logo et formules ---------- */
+.ins-apercu{
+  width:96px;height:96px;border-radius:var(--radius);border:1px dashed var(--line);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;background:var(--panel-2);
+  color:var(--muted);font-size:12px;text-align:center;padding:6px;
+}
+.ins-apercu img{width:100%;height:100%;object-fit:contain}
+.plan-carte{
+  border:1px solid var(--line);border-radius:var(--radius);padding:14px;background:var(--panel-2);
+}
+.plan-carte.meilleur{border-color:var(--primary);background:var(--primary-soft)}
+.plan-carte .prix{font-size:20px;font-weight:700;color:var(--ink)}
+.plan-carte .detail{color:var(--muted);font-size:12.5px}
+
+/* ---------- Espace Aide (WhatsApp) ---------- */
+.aide-hero{
+  background:linear-gradient(135deg,#075e54,#0b7a75);color:#fff;border-radius:var(--radius);
+  padding:26px 24px;margin-bottom:16px;
+}
+.aide-hero h2{margin:0 0 6px;font-size:22px}
+.aide-hero p{margin:0;opacity:.92}
+.aide-hero .num{font-size:26px;font-weight:700;letter-spacing:.5px;margin-top:10px}
+.aide-cartes{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin:16px 0}
+.aide-carte{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:16px;box-shadow:var(--ombre)}
+.aide-carte h3{margin:0 0 6px;font-size:15.5px}
+.aide-carte p{margin:0 0 10px;color:var(--muted);font-size:13.5px}
+.aide-contact{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:8px}
+.contact-ligne{
+  display:flex;align-items:center;gap:12px;background:var(--panel);border:1px solid var(--line);
+  border-radius:var(--radius-sm);padding:12px 14px;margin-bottom:10px;
+}
+.contact-ligne .ico{font-size:20px}
+.contact-ligne .num{font-weight:700}
+.btn.whatsapp{background:#25d366;border-color:#1eb955;color:#fff}
+.btn.whatsapp:hover{background:#1eb955}
+
+/* ---------- Console du propriétaire de la plateforme ---------- */
+.console-hero{
+  background:linear-gradient(135deg,#0f172a,#1e3a8a);color:#fff;border-radius:var(--radius);
+  padding:22px 24px;margin-bottom:16px;
+}
+.console-hero h2{margin:0 0 4px;font-size:21px}
+.console-hero p{margin:0;opacity:.85;font-size:13.5px}
+.console-grille{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px;margin-bottom:16px}
+.console-carte{background:var(--panel);border:1px solid var(--line);border-radius:var(--radius);padding:14px;box-shadow:var(--ombre)}
+.stat-chiffre{font-size:22px;font-weight:700;color:var(--ink)}
+.stat-libelle{color:var(--muted);font-size:12.5px;margin-top:2px}
+.ent-ligne{display:flex;align-items:center;gap:12px}
+.ent-logo{
+  width:38px;height:38px;border-radius:9px;border:1px solid var(--line);background:var(--panel-2);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;font-size:15px;flex:none;
+}
+.ent-logo img{width:100%;height:100%;object-fit:contain}
+.ent-nom{font-weight:600}
+.ent-nom .sub{display:block;font-weight:400;color:var(--muted);font-size:12px}
+.pastille{display:inline-block;padding:2px 9px;border-radius:999px;font-size:11.5px;font-weight:600}
+.pastille.ok{background:var(--ok-soft);color:var(--ok)}
+.pastille.warn{background:var(--warn-soft);color:var(--warn)}
+.pastille.bad{background:var(--bad-soft);color:var(--bad)}
+.pastille.info{background:var(--info-soft);color:var(--info)}
+@media(max-width:700px){
+  .aide-hero .num{font-size:21px}
+  .console-grille{grid-template-columns:repeat(2,1fr)}
+}
+
+/* ---------- Actualisation automatique (temps réel) ---------- */
+#indicateur-temps-reel{
+  display:inline-flex;align-items:center;gap:6px;padding:3px 10px;border-radius:999px;
+  background:var(--panel-2);border:1px solid var(--line);font-size:12px;white-space:nowrap;
+}
+#indicateur-temps-reel.clignote{animation:maj-reel 1.6s ease-out 1}
+@keyframes maj-reel{
+  0%{background:var(--primary-soft);border-color:var(--primary);color:var(--primary-dark)}
+  100%{background:var(--panel-2);border-color:var(--line);color:inherit}
+}
+@media(max-width:700px){#indicateur-temps-reel{display:none}}
+
+/* ==========================================================================
+   Thème sombre — appliqué à toute l'application (y compris la console du
+   propriétaire) en posant data-theme="sombre" sur <html>.
+   ========================================================================== */
+html[data-theme="sombre"]{
+  --bg:#0b1220; --panel:#121a2b; --panel-2:#0f1728;
+  --ink:#e8eefb; --ink-2:#c6d2e6; --muted:#8ea0bd; --line:#26324a;
+  --primary:#2dd4bf; --primary-dark:#14b8a6; --primary-soft:#0f3b3a;
+  --accent:#fbbf24; --accent-soft:#3b2f0b;
+  --ok:#4ade80; --ok-soft:#10311f;
+  --warn:#fbbf24; --warn-soft:#3b2f0b;
+  --bad:#f87171; --bad-soft:#3a1414;
+  --info:#60a5fa; --info-soft:#122a4a;
+  --sidebar:#080d18; --sidebar-2:#0d1526;
+  --ombre:0 1px 2px rgba(0,0,0,.4), 0 4px 16px rgba(0,0,0,.35);
+  --ombre-fort:0 12px 40px rgba(0,0,0,.6);
+}
+html[data-theme="sombre"] body{background:var(--bg);color:var(--ink)}
+html[data-theme="sombre"] .carte,
+html[data-theme="sombre"] .kpi,
+html[data-theme="sombre"] .boite-connexion,
+html[data-theme="sombre"] .modale-contenu,
+html[data-theme="sombre"] .aide-carte,
+html[data-theme="sombre"] .console-carte,
+html[data-theme="sombre"] .contact-ligne,
+html[data-theme="sombre"] .plan-carte,
+html[data-theme="sombre"] .ent-logo{background:var(--panel);border-color:var(--line);color:var(--ink)}
+html[data-theme="sombre"] .carte-entete,
+html[data-theme="sombre"] .kpi .libelle{color:var(--ink-2)}
+html[data-theme="sombre"] input,
+html[data-theme="sombre"] select,
+html[data-theme="sombre"] textarea{
+  background:var(--panel-2);color:var(--ink);border-color:var(--line);
+}
+html[data-theme="sombre"] input::placeholder,
+html[data-theme="sombre"] textarea::placeholder{color:var(--muted)}
+html[data-theme="sombre"] table th{background:var(--panel-2);color:var(--ink-2)}
+html[data-theme="sombre"] table td{border-color:var(--line);color:var(--ink)}
+html[data-theme="sombre"] table tbody tr:hover{background:rgba(45,212,191,.07)}
+html[data-theme="sombre"] .btn{background:var(--panel-2);border-color:var(--line);color:var(--ink)}
+html[data-theme="sombre"] .btn:hover{border-color:var(--primary);color:var(--primary)}
+html[data-theme="sombre"] .btn.primaire{background:var(--primary);border-color:var(--primary);color:#04211f}
+html[data-theme="sombre"] .btn.danger{background:var(--bad-soft);border-color:var(--bad);color:var(--bad)}
+html[data-theme="sombre"] .barre-haut{background:var(--panel);border-color:var(--line)}
+html[data-theme="sombre"] .barre-laterale{background:var(--sidebar)}
+html[data-theme="sombre"] .panier-total{border-color:var(--line)}
+html[data-theme="sombre"] .jauge{background:var(--panel-2)}
+html[data-theme="sombre"] .badge,
+html[data-theme="sombre"] .puce,
+html[data-theme="sombre"] .pastille{background:var(--panel-2);color:var(--ink-2);border:1px solid var(--line)}
+html[data-theme="sombre"] .badge.ok,
+html[data-theme="sombre"] .pastille.ok{background:var(--ok-soft);color:var(--ok)}
+html[data-theme="sombre"] .badge.ko,
+html[data-theme="sombre"] .badge.erreur,
+html[data-theme="sombre"] .pastille.bad{background:var(--bad-soft);color:var(--bad)}
+html[data-theme="sombre"] .badge.attente,
+html[data-theme="sombre"] .pastille.warn{background:var(--warn-soft);color:var(--warn)}
+html[data-theme="sombre"] .vide,
+html[data-theme="sombre"] .petit.texte-muted,
+html[data-theme="sombre"] .texte-muted,
+html[data-theme="sombre"] .aide{color:var(--muted)}
+html[data-theme="sombre"] .ecran-connexion{background:var(--sidebar)}
+html[data-theme="sombre"] .connexion-droite{background:var(--bg)}
+html[data-theme="sombre"] .aide-hero{background:linear-gradient(135deg,#0f3b3a,#134e4a)}
+html[data-theme="sombre"] .console-hero{background:linear-gradient(135deg,#080d18,#122a4a)}
+html[data-theme="sombre"] .onglets button{color:var(--muted)}
+html[data-theme="sombre"] .onglets button.actif{color:var(--primary);border-bottom-color:var(--primary)}
+html[data-theme="sombre"] .pos-produit{background:var(--panel-2);border-color:var(--line)}
+html[data-theme="sombre"] .selecteur-magasin{background:var(--panel-2);border-color:var(--line);color:var(--ink-2)}
+html[data-theme="sombre"] .badge-abonnement{background:var(--panel-2);border-color:var(--line);color:var(--ink-2)}
+html[data-theme="sombre"] #indicateur-temps-reel{background:var(--panel-2);border-color:var(--line);color:var(--muted)}
+html[data-theme="sombre"] .ins-apercu{background:var(--panel-2);border-color:var(--line)}
+html[data-theme="sombre"] .grille-barre span{color:var(--ink)}
+html[data-theme="sombre"] .notification{background:var(--panel);color:var(--ink);border-color:var(--line)}
+
+/* ==========================================================================
+   Écran de vérification de l'adresse email (bloquant après l'inscription)
+   ========================================================================== */
+.centre-plein {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 60vh;
+  padding: 24px 12px;
+}
+
+.carte-verification {
+  width: 100%;
+  max-width: 460px;
+  box-shadow: 0 18px 44px -22px rgba(15, 23, 42, .45);
+}
+
+.carte-verification input[name=code] {
+  font-family: ui-monospace, "SFMono-Regular", Menlo, monospace;
+}
+
+/* Thème sombre : l'écran de vérification suit les variables du thème. */
+html[data-theme="sombre"] .carte-verification {
+  box-shadow: 0 18px 44px -22px rgba(0, 0, 0, .8);
+}
+
+/* Carte de choix d'un moyen de paiement actif (MasterCard compris). */
+.choix-carte.actif {
+  border-color: var(--primary);
+  background: color-mix(in srgb, var(--primary) 7%, transparent);
+}
+
+/* ==========================================================================
+   Ressources humaines : titres de section, dossiers et documents
+   ========================================================================== */
+.groupe-titre {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--line);
+}
+
+/* Bouton de téléchargement d'un document : il ne doit pas hériter du style lien. */
+a.btn[data-token-doc] { text-decoration: none; display: inline-block; }
+
+/* Thème sombre : le séparateur de section suit les variables du thème. */
+html[data-theme="sombre"] .groupe-titre { border-bottom-color: var(--line); }
+
+/* ==========================================================================
+   Paiement d'abonnement : logos cliquables + formulaire carte bancaire
+   ========================================================================== */
+.choix-services.logos { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+.logo-paiement {
+  display: flex; flex-direction: column; align-items: center; gap: 8px;
+  padding: 14px 12px; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--panel-2); cursor: pointer; transition: transform .12s, box-shadow .12s;
+}
+.logo-paiement:hover { transform: translateY(-2px); box-shadow: var(--ombre-fort); }
+.logo-paiement:disabled { opacity: .45; cursor: not-allowed; transform: none; }
+.logo-paiement img { height: 64px; width: auto; object-fit: contain; border-radius: 6px; }
+.logo-paiement .carte-visuelle { font-size: 44px; line-height: 64px; }
+
+/* Numéro de carte en 4 blocs, comme une page « Payer en ligne ». */
+.cb-numero { display: flex; gap: 6px; }
+.cb-numero input, .cb-numero select {
+  width: auto; flex: 1; text-align: center; letter-spacing: 1px; font-family: inherit;
+}
+
+/* ---- Logo d'application (image fournie, format paysage) ---- */
+.logo-app-img { height: 44px; width: auto; max-width: 220px; object-fit: contain; display: block; }
+.marque .logo-app-img, .bs-marque .logo-app-img { height: 40px; }
+.bs-entreprise img.logo-ent { width: 34px; height: 34px; object-fit: contain; border-radius: 8px; background: var(--panel); vertical-align: middle; margin-right: 8px; }
+
+/* ---- Compte rendu d'inventaire (fenêtre d'impression) ---- */
+.cr-inventaire { font-family: inherit; color: #12263f; padding: 28px; }
+.cr-inventaire h1 { font-size: 20px; margin: 0 0 4px; }
+.cr-inventaire table { width: 100%; border-collapse: collapse; margin-top: 14px; font-size: 12.5px; }
+.cr-inventaire th, .cr-inventaire td { border: 1px solid #d5dce6; padding: 6px 8px; text-align: left; }
+.cr-inventaire th { background: #eef2f7; }
+.cr-inventaire .cr-pied { margin-top: 26px; display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; }
+.cr-inventaire .cr-pied img { height: 40px; object-fit: contain; }
+@media print { .no-print { display: none !important; } }
